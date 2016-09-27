@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<tab text="aaa"></tab>
+<view class="container">
+
+<view class="cate-container">
+ <button  wx:for="{{categories}}" bindtap="loadCatelist" data-id="{{item.id}}" > {{item.title}} </button>
+</view>
+ 
+ <scroll-view scroll-y="true" style="height:400px">
+    <block wx:for="{{posts}}" >
+        <text> {{item.title + '\n\n'}} </text>
+    </block>
+  </scroll-view>
+
+
+  <loading hidden="{{hidden}}"> 载入中 </loading>
+
+</view>
